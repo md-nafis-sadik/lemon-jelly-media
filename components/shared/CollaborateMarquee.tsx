@@ -21,7 +21,7 @@ const CollaborateMarquee = () => {
 
     return (
         <div
-            className="w-full bg-white pb-6 pt-6 lg:pt-15 lg:pb-15 font-inter"
+            className="w-full bg-white pb-6 pt-6 lg:pt-15 lg:pb-15 font-poppins"
             id={"companies"}
         >
             <p className="text-center text-black-600 md:text-black-700 text-lg md:text-2xl !leading-[1.4]">

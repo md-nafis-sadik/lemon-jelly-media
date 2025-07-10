@@ -10,9 +10,10 @@ interface TextFadeInProps {
   text: string;
   className?: string;
   extraClassName?: string;
+  extra2ClassName?: string;
 }
 
-const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "", extraClassName = "" }) => {
+const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "", extraClassName = "", extra2ClassName = "" }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [words, setWords] = useState<string[]>([]);
 
@@ -98,14 +99,14 @@ const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "", extraClas
   return (
     <div
       ref={containerRef}
-      className={cn(`flex flex-col font-inter`, className)}
+      className={cn(`flex flex-col font-poppins`, className)}
     >
       {words.map((line: string, lineIndex: React.Key | null | undefined) => (
         <div key={lineIndex} className={`flex flex-wrap justify-center ${extraClassName}`}>
           {line
             .split(" ")
             .map((word: string, wordIndex: React.Key | null | undefined) => (
-              <div key={wordIndex} className="word flex mr-2">
+              <div key={wordIndex} className={`word flex mr-2 ${extra2ClassName}`} >
                 {word
                   .split("")
                   .map(

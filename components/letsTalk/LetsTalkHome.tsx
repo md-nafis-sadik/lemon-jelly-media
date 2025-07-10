@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const LetsTalkHome = () => {
   return (
-    <section id="contact" className="containerX py-6 lg:py-10 my-6 lg:my-10 font-inter">
+    <section id="contact" className="containerX py-6 lg:py-10 my-6 lg:my-10 font-poppins">
       <div style={{
         background: `
       radial-gradient(ellipse at 30% 70%, #033877 0%, #000 100%)
@@ -27,7 +27,7 @@ const LetsTalkHome = () => {
               type="email"
               placeholder="Your email"
               className={cn(
-                "text-xs md:text-sm lg:text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-black placeholder:text-gray-400 h-full font-inter max-w-[80px] md:max-w-full"
+                "text-xs md:text-sm lg:text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-black placeholder:text-gray-400 h-full font-poppins max-w-[80px] md:max-w-full"
               )}
             />
             <Button

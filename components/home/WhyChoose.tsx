@@ -1,73 +1,125 @@
 'use client';
 
-import { images } from '@/services';
-import Image from 'next/image';
-import TextFadeIn from '../animations/TextFadeIn';
+import TextFadeIn from "../animations/TextFadeIn";
 
-export default function WhyChoose() {
+const projects = [
+  {
+    title: 'limoné beverages',
+    subtitle: 'branding, graphic design, product campaign',
+    image: '/images/project/project-1.jpg',
+    link: '#',
+    icon: '➡️',
+    highlight: true,
+  },
+  {
+    title: 'glow up cosmetics',
+    subtitle: 'social media, animation, marketing strategy',
+    image: '/images/project/project-2.png',
+    link: '#',
+  },
+  {
+    title: 'urban beats',
+    subtitle: 'ui/ux design',
+    image: '/images/project/project-3.png',
+    link: '#',
+  },
+  {
+    title: 'bytetech',
+    subtitle: 'brand design, ui assets',
+    image: '/images/project/project-4.png',
+    link: '#',
+  },
+  {
+    title: 'peach social',
+    subtitle: 'media design, content creation',
+    image: '/images/project/project-5.png',
+    link: '#',
+  },
+];
+
+export default function ProjectShowcase() {
   return (
-    <section id="about" className="py-4 font-inter lg:py-7 xl:py-10 containerX mx-auto bg-white">
-      <div className="text-center mb-4 lg:mb-10">
-        <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">Features</p>
+    <section className="bg-black py-28 px-4 text-white font-poppins">
+      <div className='containerX text-center mb-28'>
         <div className="flex justify-center items-center w-full mx-auto">
           <TextFadeIn
-            text="Why Choose Lemon Jelly Media?"
-            className="text-2xl lg:text-5xl max-w-2xl lg:text-[48px] font-[700] !leading-[1.2] text-main-600 tracking-wide mb-6"
+            text="Our Works"
+            extra2ClassName='mr-3'
+            className="text-2xl lowercase lg:text-5xl max-w-full lg:text-[64px] font-[700] !leading-[1.2] text-main-500 tracking-wide mb-6"
           />
         </div>
+        <p className='text-text-100 text-2xl'>showcasing our creative expertise and successful projects</p>
       </div>
+      <div className="containerX mx-auto flex flex-col gap-6">
 
-      <div className="containerX mx-auto px-0 grid grid-cols-1 lg:grid-cols-3 gap-6 text-center lg:text-left">
-        {/* Card 1 */}
-        <div className="bg-main-600 text-white p-8 lg:p-12 rounded-2xl flex flex-col justify-between gap-14">
-          <h3 className="text-[40px] lg:text-[64px] font-semibold">190+</h3>
-          <p className="text-sm lg:text-base"><span className='text-paste-600'>Global Coverage</span> - Connect in 190+ countries instantly.</p>
+        {/* First Row: 2 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {projects.slice(0, 2).map((item, index) => (
+            <ProjectCard key={index} {...item} />
+          ))}
         </div>
 
-        {/* Card 2 */}
-        <div className="bg-main-600 text-white p-8 lg:p-12 rounded-2xl flex flex-col justify-between gap-14 text-center lg:text-left">
-
-          <p className="text-sm lg:text-base">Smart Data Management .Track usage in real-time from your dashboard.</p>
-          <div className="relative w-full min-h-[78px] rounded-xl overflow-hidden">
-            <Image
-              src={images.SmartDataManagement}
-              alt="Smart Data Management"
-              fill
-              sizes="100vw"
-              className="object-contain"
-            />
-          </div>
-
+        {/* Second Row: 3 cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          {projects.slice(2).map((item, index) => (
+            <ProjectCard key={index + 2} {...item} />
+          ))}
         </div>
 
-        {/* Card 3 - Image */}
-        <div className="relative bg-[#EDD26F] p-8 lg:p-12 rounded-2xl flex items-center justify-center min-h-[236px]">
-          <Image
-            src={images.CheckingApp}
-            alt="Smiling user"
-            fill
-            className="object-cover"
-          />
-        </div>
-
-        {/* Card 4 - No Roaming Charges */}
-        <div className="bg-paste-600 col-span-1 lg:col-span-3 px-8 lg:px-12 pt-8 lg:pt-12 rounded-2xl min-h-[236px] flex flex-col lg:flex-row items-center justify-between">
-          <div className="text-main-600 mb-4 lg:mb-0 h-full">
-            <h3 className="text-2xl lg:text-[64px] max-w-xl font-bold mb-2 lg:mb-4 leading-[50px] lg:leading-[70px]">No Roaming Charges</h3>
-            <p className="text-sm font-light">Flat-rate pricing with zero hidden fees.</p>
-          </div>
-          <div className="relative rounded-xl">
-            <Image
-              src={images.Charges}
-              alt="Smiling user"
-              width={452}
-              height={300}
-              className="object-contain"
-            />
-          </div>
-          {/* Replace with actual illustration */}
+        {/* See All */}
+        <div className="text-center mt-10">
+          <a href="#" className="text-2xl font-semibold text-white hover:text-yellow-400 transition">
+            see all <span className="ml-1 text-main-500">→</span>
+          </a>
         </div>
       </div>
     </section>
+  );
+}
+
+function ProjectCard({
+  title,
+  subtitle,
+  image,
+}: {
+  title: string;
+  subtitle: string;
+  image: string;
+}) {
+  return (
+    <a
+      href="#"
+      className="relative group overflow-hidden rounded-xl cursor-pointer"
+    >
+      {/* Image */}
+      <img
+        src={image}
+        alt={title}
+
+        className="w-full h-[510px] object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+
+      {/* Overlay */}
+      <div style={{
+        background: `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(22, 22, 22, 0.60) 71.92%, #0A0A0A 92.5%)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }} className="absolute inset-0 bg-opacity-40 opacity-100 transition-opacity duration-300" />
+
+      {/* Info */}
+      <div className="absolute bottom-8 left-8 right-8 z-10">
+        <h3 className="text-[38px] font-semibold">{title}</h3>
+        <p className="text-base text-gray-300">{subtitle}</p>
+      </div>
+
+      {/* Hover Icon */}
+      <div className="absolute bottom-8 right-8 z-20 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+        <div className="w-[80px] h-[80px] bg-yellow-400 text-black flex items-center justify-center shadow-lg" style={{
+          clipPath: 'polygon(0 0, 70% 0, 100% 30%, 100% 100%, 30% 100%, 0 70%)'
+        }}>
+          →
+        </div>
+      </div>
+    </a>
   );
 }

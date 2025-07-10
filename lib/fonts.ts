@@ -42,6 +42,18 @@ export const mostculine = localFont({
   variable: "--font-mostculine",
 });
 
+export const brittanySignature = localFont({
+  src: [
+    {
+      path: "../public/fonts/brittany-signature/BrittanySignature.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--brittany-signature",
+});
+
+
 export const yesevaOne = localFont({
   src: [
     {
@@ -87,6 +99,37 @@ export const scout = localFont({
     },
   ],
   variable: "--font-scout",
+});
+
+export const poppins = localFont({
+  src: [
+    {
+      path: "../public/fonts/poppins/Poppins-ExtraBold.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/poppins/Poppins-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/poppins/Poppins-Medium.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/poppins/Poppins-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/poppins/Poppins-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+  variable: "--font-poppins",
 });
 
 // Local font - Scout Condensed (multiple weights)

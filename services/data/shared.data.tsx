@@ -139,7 +139,7 @@ export const testimonialsData = [
     id: 3,
     message:
       "Used Lemon Jelly Media across 5 European countries. Flawless connectivity, and the auto-top-up feature saved me when I ran low on data.",
-    avatar: images.avatar1,
+    avatar: images.avatar3,
     name: "Sarah Chen",
     title: "Seamless Europe Trip",
     designation: "Frequent Flyer",
@@ -152,7 +152,7 @@ export const testimonialsData = [
     id: 4,
     message:
       "As a backpacker, Lemon Jelly Media’s pay-as-you-go plans are perfect. No contracts, and coverage even in remote areas of Thailand.",
-    avatar: images.avatar2,
+    avatar: images.avatar1,
     name: "Alex Rivera",
     title: "Budget Travel Essential",
     designation: "Backpacker",
@@ -165,7 +165,7 @@ export const testimonialsData = [
     id: 5,
     message:
       "The customer support team helped me troubleshoot my eSIM setup at 2AM before a flight. Above and beyond service!",
-    avatar: images.avatar1,
+    avatar: images.avatar2,
     name: "Priya Patel",
     title: "24/7 Support Wins",
     designation: "Solo Traveler",
@@ -178,7 +178,7 @@ export const testimonialsData = [
     id: 6,
     message:
       "Lemon Jelly Media’s transparent pricing puts shady airport SIM vendors to shame. I knew exactly what I paid for upfront.",
-    avatar: images.avatar2,
+    avatar: images.avatar3,
     name: "Marcus Lee",
     title: "No More Surprise Fees",
     designation: "Business Traveler",

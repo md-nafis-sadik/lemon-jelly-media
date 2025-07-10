@@ -73,7 +73,7 @@ const FAQ = () => {
   
 
   return (
-    <section  className="bg-white font-inter flex_center flex-col w-full py-16 lg:py-20">
+    <section  className="bg-white font-poppins flex_center flex-col w-full py-16 lg:py-20">
       <div className='text-center'>
         <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">FAQ</p>
         <div className="flex justify-center items-center w-full mx-auto">
@@ -97,14 +97,14 @@ const FAQ = () => {
             <AccordionItem key={index} value={`item-${index}`} >
               <AccordionTrigger
                 className={cn(
-                  "text-sm md:text-xl font-medium md:font-bold text-black !leading-[1.4] md:!leading-[1.1] text-start font-inter"
+                  "text-sm md:text-xl font-medium md:font-bold text-black !leading-[1.4] md:!leading-[1.1] text-start font-poppins"
                 )}
               >
                 {question}
               </AccordionTrigger>
               <AccordionContent
                 className={cn(
-                  "text-xs md:text-base text-gray-600 font-normal font-inter"
+                  "text-xs md:text-base text-gray-600 font-normal font-poppins"
                 )}
               >
                 {answer}

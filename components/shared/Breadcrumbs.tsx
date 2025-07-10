@@ -8,7 +8,7 @@ function Breadcrumbs({
   breadcrumbs: { name: string; link: string }[];
 }) {
   return (
-    <ul className="flex items-center gap-2 text-sm font-inter uppercase">
+    <ul className="flex items-center gap-2 text-sm font-poppins uppercase">
       {breadcrumbs?.map((item, index) => (
         <li key={index} className="flex items-center gap-2">
           {index !== breadcrumbs?.length - 1 ? (

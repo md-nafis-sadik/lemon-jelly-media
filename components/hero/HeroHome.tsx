@@ -11,6 +11,7 @@ import { DownloadAppIcon, images } from '@/services'
 import Link from 'next/link'
 import HeaderButton from '../shared/HeaderButton'
 import CustomButton from '../shared/CustomButton'
+import CustomButtonY from '../shared/CustomButtonY'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -62,9 +63,9 @@ const HeroHome = () => {
   }, [])
 
   return (
-    <section ref={sectionRef} className='relative min-h-screen pt-[15%] pb-[10%] font-inter overflow-hidden'>
+    <section ref={sectionRef} className='relative min-h-screen pt-[40%] sm:pt-[25%] md:pt-[20%] lg:pt-[15%] pb-[10%] font-poppins overflow-hidden'>
       {/* Video Background */}
-      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 z-0 w-[100vw] h-full overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
@@ -87,20 +88,25 @@ const HeroHome = () => {
       <section className="containerX relative font-[600] w-full pt-10 lg:pt-0 pb-0 px-0 lg:px-16 2xl:px-20 z-10 flex flex-col justify-center items-center h-full">
         <div className="flex flex-col lg:flex-row px-4">
           <div ref={textBlockRef} className="flex flex-col justify-center items-center w-full pb-10 z-10">
-            <div className='flex'>
-              <TextFadeIn text="LEM" className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2] mt-3 lg:mt-2 text-main-500" extraClassName='!font-mostculine' />
-              <span>
-                <Image src={images.Oimage} alt="Logo" className="w-10 h-10 lg:w-[84px] lg:h-[84px] mt-8" />
-              </span>
+            <div className='flex space-x-2 flex-wrap justify-center'>
+              <div className='flex space-x-0'>
+                <TextFadeIn text="LEM" extra2ClassName="mr-0" className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2] text-main-500" extraClassName='!font-mostculine' />
+                <span>
+                  <Image src={images.Oimage} alt="Logo" className="w-[34px] h-[34px] lg:w-[67px] lg:h-[67px] xl:w-[84px] xl:h-[84px] mt-[10px] lg:mt-[24px]" />
+                </span>
+                <TextFadeIn text="N" className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2]  text-main-500" extraClassName='!font-mostculine' />
+              </div>
 
-              <TextFadeIn text="N   JELLY   MEDIA" className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2] mt-3 lg:mt-2 text-main-500" extraClassName='!font-mostculine' />
+
+              <TextFadeIn text="JELLY" className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2]  text-main-500" extraClassName='!font-mostculine' />
+              <TextFadeIn text="MEDIA" className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2] text-main-500" extraClassName='!font-mostculine' />
             </div>
-              <TextFadeIn text="Think.   Create.   Inspire." className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2] mt-3 lg:mt-2 text-white" extraClassName='!font-mostculine' />
+            <TextFadeIn text="Think.   Create.   Inspire." className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2] mt-3 lg:mt-2 text-white" extraClassName='!font-mostculine' />
 
-            <AnimatedText text="Lemon Jelly Media is your one-stop eSIM solution for seamless global connectivity. No physical SIMs, no surprise fees." className="mt-8 text-center text-text-50 lg:text-left text-sm lg:text-base" />
+            <p className='mt-8 text-center text-text-50 lg:text-left text-sm lg:text-lg max-w-[90%] font-light'>Lemon Jelly is an <span className="font-semibold">independent brand-building</span> creative agency. We live on the story side of marketing </p>
 
             <div className="mt-5 lg:mt-12 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-3">
-              <HeaderButton />
+              <CustomButtonY />
               <CustomButton />
             </div>
           </div>

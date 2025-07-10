@@ -12,7 +12,7 @@ import { useEffect, useRef } from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white relative font-inter">
+    <footer className="bg-white relative font-poppins">
       <div className="absolute bottom-0 left-0 h-[405px] w-[290px]">
         <Image
           alt="hero star glass image"
@@ -36,7 +36,7 @@ const Footer = () => {
               </Link>
                 <p
                   className={cn(
-                    "text-xs md:text-sm lg:text-base mt-4 md:mt-6 text-center md:text-start font-inter"
+                    "text-xs md:text-sm lg:text-base mt-4 md:mt-6 text-center md:text-start font-poppins"
                   )}
                 >
                   {footerData.inquiries.description}
@@ -67,7 +67,7 @@ const Footer = () => {
                     <Link
                       href={link.href}
                       className={cn(
-                        "footer_el_text block mb-2 text-center sm:text-start font-inter"
+                        "footer_el_text block mb-2 text-center sm:text-start font-poppins"
                       )}
                     >
                       {link.text}
@@ -92,7 +92,7 @@ const Footer = () => {
                     <Link
                       href={link.href}
                       className={cn(
-                        "footer_el_text block mb-2 text-center sm:text-start font-inter"
+                        "footer_el_text block mb-2 text-center sm:text-start font-poppins"
                       )}
                     >
                       {link.text}

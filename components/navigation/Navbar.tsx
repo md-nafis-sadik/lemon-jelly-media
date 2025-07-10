@@ -11,10 +11,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 import NavigationSheet from "./NavigationSheet";
-import { Button } from "../ui/button";
 import { images } from "@/services";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import HeaderButton from "../shared/HeaderButton";
 
 const Navbar: FC = () => {
@@ -38,20 +36,29 @@ const Navbar: FC = () => {
   return (
     <nav
       className={cn(
-        "sticky top-0 z-50 transition-colors duration-300 font-inter",
+        "sticky top-0 z-50 transition-all duration-300 font-poppins",
         pathname === routes.homepage.link
-          ? isScrolled ? "bg-white lg:bg-transparent border-natural-300" : "bg-transparent border-natural-300"
-          : isScrolled ? "bg-white lg:bg-transparent border-natural-300" : "bg-transparent border-natural-300"
+          ? isScrolled ? "bg-[#181818] lg:bg-transparent mx-0 rounded-none mt-6" : "lg:bg-transparent bg-[#61616140] mx-6 lg:mx-0 rounded-full lg:rounded-none mt-6 lg:mt-0"
+          : isScrolled ? "bg-[#181818] lg:bg-transparent mx-0 rounded-none mt-6" : "lg:bg-transparent bg-[#61616140] mx-6 lg:mx-0 rounded-full lg:rounded-none mt-6 lg:mt-0"
       )}
     >
-      <div className="containerX flex flex-row items-center justify-between gap-4 py-4 lg:py-8 px-6 lg:px-24">
+      <div className="containerX flex flex-row items-center justify-between gap-4 py-2 lg:py-8 pr-2 pl-4 lg:pl-24 lg:pr-24">
         <div className="flex items-center gap-12">
           <Link href={routes.homepage.link} className="h-fit">
-            <div className="flex items-center gap-2">
+            <Image
+              src={images.Logo}
+              alt="Company logo"
+              className="w-14 lg:w-[105px] block lg:hidden"
+              width={105}
+              height={60}
+              priority
+            />
+            <div className="hidden lg:flex items-center gap-2">
               {isScrolled ?
                 <Image
                   src={images.LogoBlack}
                   alt="Company logo"
+                  className="w-14 lg:w-[105px]"
                   width={105}
                   height={60}
                   priority
@@ -59,6 +66,7 @@ const Navbar: FC = () => {
                 : <Image
                   src={images.Logo}
                   alt="Company logo"
+                  className="w-14 lg:w-[105px]"
                   width={105}
                   height={60}
                   priority
@@ -69,7 +77,7 @@ const Navbar: FC = () => {
 
 
         </div>
-        <div className={`hidden min-[1160px]:flex flex-row gap-6 items-center   rounded-full p-2 ${isScrolled ? "bg-[#181818]" : "bg-[#61616140]"}`}>
+        <div className={`hidden min-[1160px]:flex flex-row gap-6 items-center rounded-full p-2 ${isScrolled ? "bg-[#181818]" : "bg-[#61616140]"}`}>
           {navbarData.map(({ link, name, megaMenu }, index) => (
             <div className="flex flex-row items-center" key={index}>
               <Link
@@ -79,16 +87,21 @@ const Navbar: FC = () => {
                 {/* Active route background - fixed */}
                 {pathname === link && (
                   <span
-                    className="absolute inset-0 rounded-[100px] z-[0]"
-                    style={{
-                      background: `
-                        linear-gradient(to bottom right, rgba(254, 255, 231, 0.00) 0%, rgba(255, 224, 0, 0.32) 50%) bottom right / 50% 50% no-repeat, 
-                        linear-gradient(to bottom left, rgba(254, 255, 231, 0.00) 0%, rgba(255, 224, 0, 0.32) 50%) bottom left / 50% 50% no-repeat, 
-                        linear-gradient(to top left, rgba(254, 255, 231, 0.00) 0%, rgba(255, 224, 0, 0.32) 50%) top left / 50% 50% no-repeat, 
-                        linear-gradient(to top right, rgba(254, 255, 231, 0.00) 0%, rgba(255, 224, 0, 0.32) 50%) top right / 50% 50% no-repeat
-                      `,
-                    }}
-                  />
+  className="absolute inset-0 rounded-[100px] z-[0] animate-jelly"
+style={{
+    background: `
+      radial-gradient(
+        circle at var(--x, 70%) var(--y, 30%),
+        rgba(255, 224, 0, 0.0) 0%,
+        rgba(255, 224, 0, 0.15) 40%,
+        rgba(255, 224, 0, 0.25) 60%,
+        rgba(255, 224, 0, 0.1) 80%,
+        rgba(255, 224, 0, 0.0) 100%
+      )
+    `,
+    animation: 'jelly 4s ease-in-out infinite, moveGradientCenter 10s ease-in-out infinite',
+  }}
+/>
                 )}
 
                 <span
@@ -96,7 +109,7 @@ const Navbar: FC = () => {
                     pathname === link
                       ? "text-white font-semibold"
                       : "text-text-100 font-normal",
-                    "text-sm !leading-[1.4] relative z-[2] font-inter"
+                    "text-sm !leading-[1.4] relative z-[2] font-poppins"
                   )}
                 >
                   {name}
@@ -112,30 +125,35 @@ const Navbar: FC = () => {
                   />
                 )}
               </Link>
-              {/* {index < navbarData.length - 1 && (
-                <Dividericon
-                  className="w-[7px] h-7"
-                  color={
-                    pathname === routes.homepage.link
-                      ? colors.natural[900]
-                      : colors.natural[200]
-                  }
-                />
-              )} */}
             </div>
           ))}
         </div>
 
-        <div className="flex flex-row items-center gap-2 md:gap-3">
+        <div className="flex flex-row items-center gap-2 lg:gap-3">
+          <div className="">
+            <HeaderButton isScrolled={isScrolled} />
+          </div>
 
-
-          {/* DOWNLOAD APP */}
-
-          <HeaderButton isScrolled={isScrolled} />
-
-          {/* MOBILE MENU */}
-
-          <div className="lg:hidden flex cursor-pointer" onClick={() => setIsSheetOpen(true)}><MenuIcon className="!h-5 !w-5 !shrink-0" color="black" /></div>
+          <div className="lg:hidden flex cursor-pointer" onClick={() => setIsSheetOpen(true)}>
+            <div className="p-2 rounded-full"
+              style={{
+    background: `
+      radial-gradient(
+        circle at var(--x, 60%) var(--y, 40%),
+        rgba(255, 224, 0, 0.0) 0%,
+        rgba(255, 224, 0, 0.15) 70%,
+        rgba(255, 224, 0, 0.25) 40%,
+        rgba(255, 224, 0, 0.1) 50%,
+        rgba(255, 224, 0, 0.0) 100%
+      )
+    `,
+    animation: 'jelly 4s ease-in-out infinite, moveGradientCenter 10s ease-in-out infinite',
+  }}
+            >
+              <MenuIcon className="!h-5 !w-5 !shrink-0" color="white" />
+            </div>
+           
+          </div>
 
         </div>
       </div>

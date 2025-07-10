@@ -39,7 +39,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         className={cn(
-          "font-inter",
+          "font-poppins",
           buttonVariants({ variant, size, className })
         )}
         ref={ref}

@@ -62,7 +62,7 @@ const ProjectHomeCard = ({
 
             <p
               className={cn(
-                "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-inter line-clamp-2"
+                "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-poppins line-clamp-2"
               )}
             >
               {item?.description}
@@ -71,7 +71,7 @@ const ProjectHomeCard = ({
           <div className="flex flex-col">
             <p
               className={cn(
-                "text-[10px] md:text-xs font-normal !leading-[1.6] text-text-200 font-inter"
+                "text-[10px] md:text-xs font-normal !leading-[1.6] text-text-200 font-poppins"
               )}
             >
               {item?.tagList}

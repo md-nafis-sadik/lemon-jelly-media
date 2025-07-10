@@ -1,149 +1,111 @@
-'use client'
-
-import { useRef, useEffect } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import { ConnectionIcon, ComputerIcon, images } from "@/services";
+import { cn } from "@/lib/utils";
+import { Marquee } from "@/components/magicui/marquee";
 import TextFadeIn from "../animations/TextFadeIn";
 
-// Define TypeScript types
-type GoalItem = {
-  title: string;
-  description: string;
-  customclass: string;
-  titleclass: string;
-  descriptionclass: string;
-  icon: React.ReactNode;
-  bg: string;
-  borderColor: string;
-  bgImage?: string; // Add this line
+const reviews = [
+  {
+    name: "Jack",
+    username: "@jack",
+    body: "I've never seen anything like this before. It's amazing. I love it.",
+    img: "https://avatar.vercel.sh/jack",
+  },
+  {
+    name: "Jill",
+    username: "@jill",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: "https://avatar.vercel.sh/jill",
+  },
+  {
+    name: "John",
+    username: "@john",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/john",
+  },
+  {
+    name: "Jane",
+    username: "@jane",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jane",
+  },
+  {
+    name: "Jenny",
+    username: "@jenny",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jenny",
+  },
+  {
+    name: "James",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+];
+
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
+
+const ReviewCard = ({
+  img,
+  name,
+  username,
+  body,
+}: {
+  img: string;
+  name: string;
+  username: string;
+  body: string;
+}) => {
+  return (
+    <figure
+      className={cn(
+        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        // dark styles
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+      )}
+    >
+      <div className="flex flex-row items-center gap-2">
+        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <div className="flex flex-col">
+          <figcaption className="text-sm font-medium dark:text-white">
+            {name}
+          </figcaption>
+          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+        </div>
+      </div>
+      <blockquote className="mt-2 text-sm">{body}</blockquote>
+    </figure>
+  );
 };
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
-
-export default function OurGoals() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  const goals: GoalItem[] = [
-    {
-      title: "Choose Your Plan",
-      description:
-        "Select a country or global plan that fits your needs.",
-      icon: <ComputerIcon/>,
-      titleclass: "text-main-600",
-      descriptionclass: "text-main-600",
-      customclass: 'bg-paste-600',
-      bg: "bg-main-600 text-white",
-      borderColor: "border-sky-200",
-    },
-    {
-      title: "Install an eSIM",
-      description:
-        "Scan a QR code or use our app for instant activation.",
-      icon: <ConnectionIcon />,
-      titleclass: "text-white",
-      descriptionclass: "text-paste-600",
-      customclass: 'bg-main-600',
-      bg: "bg-white text-main-600",
-      borderColor: "border-yellow-200",
-      bgImage: "/images/card-background.png", // Add this line with your image path
-    },
-    {
-      title: "Stay Connected",
-      description:
-        "Scan a QR code or use our app for instant activation.",
-      icon: <ConnectionIcon />,
-      titleclass: "text-main-600",
-      descriptionclass: "text-main-600",
-      customclass: 'bg-paste-600',
-      bg: "bg-main-600 text-white",
-      borderColor: "border-yellow-200",
-    },
-  ];
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-  
-    // Get cards with proper typing
-    const cards: HTMLElement[] = Array.from(containerRef.current.children) as HTMLElement[];
-    
-    if (!cards.length) return;
-  
-    // Set initial state
-    gsap.set(cards, {
-      opacity: 0,
-      y: 50,
-    });
-  
-    // Create animation for each card
-    cards.forEach((card, index) => {
-      gsap.to(card, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: index * 0.15,
-        ease: "back.out(1.2)",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        }
-      });
-    });
-  
-    // Cleanup function
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-
+export function MarqueeDemo() {
   return (
-    <section id="services" className="py-10 md:py-20 xl:py-28 font-inter">
-      <div className="containerX mx-auto text-center">
-        <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">How It Works</p>
-        <div className="flex justify-center w-full">
-          <TextFadeIn 
-            text="How Lemon Jelly Media Works in 3 Simple Steps" 
-            className="text-2xl md:text-4xl lg:text-[48px] font-[700] !leading-[1.2] text-main-600 tracking-wide"
+    <div className=" flex-col bg-main-50 py-28  flex justify-center items-center font-poppins">
+      <div className='text-center mb-14'>
+        <div className="flex justify-center items-center w-full mx-auto">
+          <TextFadeIn
+            text="Partnered with Greatness"
+            extra2ClassName='mr-3'
+            className="text-2xl lowercase lg:text-5xl max-w-full lg:text-[64px] font-[700] !leading-[1.2] text-text-900 tracking-wide mb-6"
           />
         </div>
 
-        <div 
-          ref={containerRef}
-          className="mt-10 lg:mt-16 grid gap-6 grid-cols-1 lg:grid-cols-3 px-4 md:px-0"
-        >
-          {goals.map((goal, index) => (
-            <div
-              key={index}
-              className={`rounded-2xl p-8 lg:p-12 transition-transform hover:scale-105 hover:shadow-lg duration-300 ${goal?.customclass} ${
-                goal.bgImage ? "relative overflow-hidden" : ""
-              }`}
-            >
-              {/* Background image for the second card */}
-              {goal.bgImage && (
-                <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-100"
-                  style={{ backgroundImage: `url(${goal.bgImage})` }}
-                />
-              )}
-              <div className="w-full flex mb-8">
-                <div
-                  className={`p-3 rounded-full flex items-center justify-center text-[29px] w-[62px] h-[62px] ${goal.bg}`}
-                >
-                  0{index+1}
-                </div>
-              </div>
-              <h3 className={`text-lg md:text-xl lg:text-[34px] ${goal.titleclass} text-left relative z-10`}>
-                {goal.title}
-              </h3>
-              <p className={`text-xs md:text-sm mt-4 ${goal.descriptionclass} lg:text-base text-left relative z-10`}>
-                {goal.description}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
-    </section>
+      <div className="relative containerX bg-main-50 flex mx-auto flex-col items-center justify-center overflow-hidden">
+        <Marquee pauseOnHover className="[--duration:20s]">
+          {firstRow.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <Marquee reverse pauseOnHover className="[--duration:20s]">
+          {secondRow.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      </div>
+    </div>
   );
 }

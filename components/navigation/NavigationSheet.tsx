@@ -12,6 +12,8 @@ import {
 import colors from "@/lib/colors";
 import { navbarData, routes, socialsData } from "@/services/data/shared.data";
 import Link from "next/link";
+import CustomButton from "../shared/CustomButton";
+import HeaderButton from "../shared/HeaderButton";
 
 interface IFNavigationSheetProps {
   isSheetOpen: boolean;
@@ -29,19 +31,19 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
       <SheetContent showCrossIcon={false} className=" select-none">
         <SheetHeader className="hidden" />
 
-        <div className="bg-white flex_center justify-end py-3 px-6 border-b ">
+        <div className="bg-white flex_center justify-end py-3 px-6 border-b">
 
           <div className="lg:hidden flex cursor-pointer" onClick={closeSheet}><CrossIcon color="black" className="!h-5 !w-5 !shrink-0" /></div>
 
 
         </div>
 
-        <div className="flex flex-col items-center w-full mt-6 mb-10 bg-white">
+        <div className="flex flex-col items-center w-full mt-6 mb-10 bg-white font-poppins">
           {navbarData.map(({ link, name, megaMenu }, index) => (
             <Fragment key={index}>
               <Link
                 href={link}
-                className="h-[34px] py-3 px-2 outline-none group flex items-center justify-center gap-1 relative min-h-[58px] w-[70%] border-b 
+                className="h-[34px] py-3 px-2 outline-none group flex items-center justify-center gap-1 relative min-h-[58px] w-[70%] border-b font-poppins
                  border-gray-200 transition_common"
                 onClick={closeSheet}
               >
@@ -51,7 +53,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                     (pathname === routes.homepage.link
                       ? "navbar-btn-gradient-dark"
                       : "navbar-btn-gradient-lite"),
-                    "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-1/2 -translate-x-1/2 z-[1]"
+                    "block font-poppins navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-1/2 -translate-x-1/2 z-[1]"
                   )}
                 />
 
@@ -79,12 +81,6 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
         {/* CONNECT & SOCIALS */}
         <div className="flex flex-col items-center gap-6 mt-8 md:mt-[60px] bg-transparent">
 
-
-
-          {/* GET IN TOUCH */}
-          <Button className="flex bg-secondary-600 hover:bg-secondary-700 flex_center gap-2 group ps-3 md:px-5 font-semibold text-white text-sm px-6 py-3">
-            <span className="!leading-none px-4">Download App</span>
-          </Button>
 
 
           <div className="flex flex-row items-center gap-3">

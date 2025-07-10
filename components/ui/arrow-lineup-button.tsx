@@ -41,7 +41,7 @@ const ArrowLineupButton = React.forwardRef<
           ref={ref}
           className={cn(
             className,
-            "relative flex items-center gap-2 px-6 py-3 text-base font-bold text-text-900 !leading-[1.1] overflow-hidden transition-all duration-300 font-inter"
+            "relative flex items-center gap-2 px-6 py-3 text-base font-bold text-text-900 !leading-[1.1] overflow-hidden transition-all duration-300 font-poppins"
           )}
           {...props}
         >
@@ -52,7 +52,7 @@ const ArrowLineupButton = React.forwardRef<
           {/* Text */}
           <span
             className={cn(
-              "relative group-hover:-translate-x-6 transition-transform duration-300 font-inter md:text-base font-bold text-text-900 !leading-[1.1]",
+              "relative group-hover:-translate-x-6 transition-transform duration-300 font-poppins md:text-base font-bold text-text-900 !leading-[1.1]",
               textClassName
             )}
           >

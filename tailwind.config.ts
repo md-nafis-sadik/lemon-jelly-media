@@ -6,6 +6,7 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./styles/**/*.css"
   ],
   theme: {
     extend: {
@@ -19,6 +20,7 @@ export default {
         "yeseva-one": ["var(--font-yeseva-one)"],
         poppins: ["var(--font-poppins)"],
         scoutcond: ["var(--font-scout-one)"],
+        "brittany-signature": ["var(--brittany-signature)"]
       },
       padding: {
         30: "7.5rem", // 120px

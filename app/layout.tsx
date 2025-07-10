@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { bonbon, interTight, mostculine, scout, scoutCond, yesevaOne } from "@/lib/fonts";
+import { bonbon, brittanySignature, interTight, mostculine, poppins, scout, scoutCond, yesevaOne } from "@/lib/fonts";
 import "@/styles/globals.css";
 import "@/styles/app.css";
 import Footer from "@/components/footer/Footer";
@@ -33,6 +33,8 @@ const RootLayout = ({
           yesevaOne.variable,
           scoutCond.variable,
           scout.variable,
+          brittanySignature.variable,
+          poppins.variable,
           "bg-white min-h-screen text-neutral-700 relative"
         )}
       >

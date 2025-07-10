@@ -11,7 +11,7 @@ const HeaderButton: FC<HeaderButtonProps> = ({ isScrolled = false }) => {
     return (
 
         <div className="relative">
-            <div className={`relative group cursor-pointer transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
+            <div className={`hidden lg:block relative group cursor-pointer transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="187" height="58" viewBox="0 0 187 58" fill="none">
@@ -47,7 +47,7 @@ const HeaderButton: FC<HeaderButtonProps> = ({ isScrolled = false }) => {
                 </span>
             </div>
 
-            <div className={` absolute group cursor-pointer transition-opacity duration-500 top-0 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+            <div className={`hidden lg:block absolute group cursor-pointer transition-opacity duration-500 top-0 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="187" height="58" viewBox="0 0 187 58" fill="none">
@@ -82,6 +82,29 @@ const HeaderButton: FC<HeaderButtonProps> = ({ isScrolled = false }) => {
                     </span>
                 </span>
             </div>
+
+
+
+            <span className="block lg:hidden cursor-pointer mr-2">
+                <span className="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M0 0V20.0122L7.98649 28H28V7.98783L20.0135 0H0Z" fill="black" />
+                        <g clip-path="url(#paint0_diamond_685_1787_clip_path)" data-figma-skip-parse="true"><g transform="matrix(-0.0106 0.0225556 -0.0225556 -0.0400772 15.471 8.16667)"><rect x="0" y="0" width="1154.36" height="533.736" fill="url(#paint0_diamond_685_1787)" opacity="1" shapeRendering="crispEdges" /><rect x="0" y="0" width="1154.36" height="533.736" transform="scale(1 -1)" fill="url(#paint0_diamond_685_1787)" opacity="1" shapeRendering="crispEdges" /><rect x="0" y="0" width="1154.36" height="533.736" transform="scale(-1 1)" fill="url(#paint0_diamond_685_1787)" opacity="1" shapeRendering="crispEdges" /><rect x="0" y="0" width="1154.36" height="533.736" transform="scale(-1)" fill="url(#paint0_diamond_685_1787)" opacity="1" shapeRendering="crispEdges" /></g></g><path d="M0 0V20.0122L7.98649 28H28V7.98783L20.0135 0H0Z" data-figma-gradient-fill="{&quot;type&quot;:&quot;GRADIENT_DIAMOND&quot;,&quot;stops&quot;:[{&quot;color&quot;:{&quot;r&quot;:0.99607843160629272,&quot;g&quot;:1.0,&quot;b&quot;:0.90588235855102539,&quot;a&quot;:1.0},&quot;position&quot;:0.0},{&quot;color&quot;:{&quot;r&quot;:1.0,&quot;g&quot;:0.87795275449752808,&quot;b&quot;:0.0,&quot;a&quot;:1.0},&quot;position&quot;:1.0}],&quot;stopsVar&quot;:[{&quot;color&quot;:{&quot;r&quot;:0.99607843160629272,&quot;g&quot;:1.0,&quot;b&quot;:0.90588235855102539,&quot;a&quot;:1.0},&quot;position&quot;:0.0},{&quot;color&quot;:{&quot;r&quot;:1.0,&quot;g&quot;:0.87795275449752808,&quot;b&quot;:0.0,&quot;a&quot;:1.0},&quot;position&quot;:1.0}],&quot;transform&quot;:{&quot;m00&quot;:-21.199998855590820,&quot;m01&quot;:-45.111114501953125,&quot;m02&quot;:48.626529693603516,&quot;m10&quot;:45.111114501953125,&quot;m11&quot;:-80.154319763183594,&quot;m12&quot;:25.688268661499023},&quot;opacity&quot;:1.0,&quot;blendMode&quot;:&quot;NORMAL&quot;,&quot;visible&quot;:true}" />
+                        <defs>
+                            <clipPath id="paint0_diamond_685_1787_clip_path"><path d="M0 0V20.0122L7.98649 28H28V7.98783L20.0135 0H0Z" /></clipPath><linearGradient id="paint0_diamond_685_1787" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FEFFE7" />
+                                <stop offset="1" stop-color="#FFE000" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span className="absolute right-1.5 top-1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M7.17708 3.53125V4.98958H11.9823L3.53125 13.4406L4.55937 14.4688L13.0104 6.01771V10.8229H14.4688V3.53125H7.17708Z" fill="black" />
+                        </svg>
+                    </span>
+                </span>
+            </span>
+
 
         </div>
 

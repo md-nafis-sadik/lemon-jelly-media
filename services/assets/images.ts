@@ -12,6 +12,7 @@ export { default as LogoBlack } from "@/public/images/logo-black.png";
 export { default as LogoWhite } from "@/public/images/logo-white.png";
 export { default as avatar1 } from "@/public/images/project/avatar-1.png";
 export { default as avatar2 } from "@/public/images/project/avatar-2.png";
+export { default as avatar3 } from "@/public/images/project/avatar-3.png";
 export { default as collaborator1 } from "@/public/images/colaborators/collaborator1.png";
 export { default as collaborator2 } from "@/public/images/colaborators/collaborator2.png";
 export { default as collaborator3 } from "@/public/images/colaborators/collaborator3.png";
