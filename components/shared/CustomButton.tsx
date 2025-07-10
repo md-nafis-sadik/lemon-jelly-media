@@ -18,7 +18,7 @@ const CustomButton = () => {
                 </span>
                 <span className="lg:hidden block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="98" height="34" viewBox="0 0 98 34" fill="none">
-                        <path d="M96.6415 10.141L87.4986 0.998108H1.21289V23.8553L10.3557 32.9981H96.6415V10.141Z" fill="white" fill-opacity="0.1" stroke="white" stroke-width="0.857143" />
+                        <path d="M96.6415 10.141L87.4986 0.998108H1.21289V23.8553L10.3557 32.9981H96.6415V10.141Z" fill="white" fillOpacity="0.1" stroke="white" strokeWidth="0.857143" />
                     </svg>
                 </span>
                 <div className="absolute left-6 lg:left-10 top-[9px] lg:top-4 font-medium text-[10px] lg:text-base text-white">Contact Us</div>
@@ -35,7 +35,7 @@ const CustomButton = () => {
                 </span>
                 <span className="lg:hidden block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="98" height="34" viewBox="0 0 98 34" fill="none">
-                        <path d="M96.6415 10.141L87.4986 0.998108H1.21289V23.8553L10.3557 32.9981H96.6415V10.141Z" fill="white" fill-opacity="1" stroke="white" stroke-width="0.857143" />
+                        <path d="M96.6415 10.141L87.4986 0.998108H1.21289V23.8553L10.3557 32.9981H96.6415V10.141Z" fill="white" fillOpacity="1" stroke="white" strokeWidth="0.857143" />
                     </svg>
                 </span>
                 <div className="absolute left-6 lg:left-10 top-[9px] lg:top-4 text-[10px] lg:text-base text-black font-medium">Contact Us</div>
