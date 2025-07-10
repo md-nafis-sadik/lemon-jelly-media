@@ -39,7 +39,7 @@ const TestimonialCard = ({
           />
         </div>
         <div className={`text-xs md:text-sm lg:text-xl !leading-[1.6] text-left max-w-full text-text-100`}>
-          "{message}"
+          &quot;{message}&quot;
         </div>
       </div>
       <div className="flex gap-3 items-center mt-10 w-full justify-start">
