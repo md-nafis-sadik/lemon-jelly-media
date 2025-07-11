@@ -46,21 +46,18 @@ export function SpinningText({
     throw new Error("children must be a string or an array of strings");
   }
 
-  if (Array.isArray(children)) {
-    // Validate all elements are strings
-    if (!children.every((child) => typeof child === "string")) {
-      throw new Error("all elements in children array must be strings");
-    }
-    children = children.join("");
-  }
+  // Explicitly type the letters array as string[]
+  const letters: string[] = Array.isArray(children)
+    ? children.join("").split("")
+    : children.split("");
 
-  const letters = children.split("");
-  letters.push("");
+  letters.push(""); // Add empty string for spacing if needed
 
-  const finalTransition = {
-    ...BASE_TRANSITION,
+  const finalTransition: Transition = {
+    repeat: Infinity,
+    ease: "linear",
+    duration: duration,
     ...transition,
-    duration: (transition as { duration?: number })?.duration ?? duration,
   };
 
   const containerVariants = {
@@ -76,15 +73,13 @@ export function SpinningText({
   return (
     <motion.div
       className={cn("relative", className)}
-      style={{
-        ...style,
-      }}
+      style={style}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
       transition={finalTransition}
     >
-      {letters.map((letter, index) => (
+      {letters.map((letter: string, index: number) => (
         <motion.span
           aria-hidden="true"
           key={`${index}-${letter}`}
@@ -107,7 +102,9 @@ export function SpinningText({
           {letter}
         </motion.span>
       ))}
-      <span className="sr-only">{children}</span>
+      <span className="sr-only">
+        {Array.isArray(children) ? children.join("") : children}
+      </span>
     </motion.div>
   );
 }
