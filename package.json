@@ -1,12 +1,13 @@
 {
   "name": "template",
+  "type": "module", 
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "start:dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "node server.js", 
+    "start:win": "set PORT=3000&& node server.js", 
     "lint": "next lint"
   },
   "dependencies": {
