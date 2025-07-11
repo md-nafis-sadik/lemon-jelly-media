@@ -103,7 +103,7 @@ const HeroHome = () => {
             </div>
             <TextFadeIn text="Think.   Create.   Inspire." className="text-center text-5xl lg:text-[100px] xl:text-[120px] font-normal !leading-[1.2] mt-3 lg:mt-2 text-white" extraClassName='!font-mostculine' />
 
-            <p className='mt-8 text-center text-text-50 lg:text-left text-sm lg:text-lg max-w-[90%] font-light'>Lemon Jelly is an <span className="font-semibold">independent brand-building</span> creative agency. We live on the story side of marketing </p>
+            <p className='mt-8 text-center text-text-50 lg:text-left text-sm lg:text-lg max-w-[90%] font-light'>Lemon Jelly is an <span className="font-bold">independent brand-building</span> creative agency. We live on the story side of marketing </p>
 
             <div className="mt-5 lg:mt-12 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-3">
               <CustomButtonY />

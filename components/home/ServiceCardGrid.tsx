@@ -68,7 +68,7 @@ export default function ServiceCardGrid() {
             )}
           >
             {/* Icon in top-right */}
-            <div className="absolute top-[-40px] right-4 text-xl">
+            <div className="absolute top-[-40px] right-4 text-2xl">
               <div className='relative'>
                 <div className={` text-yellow-300  w-[80px] h-[80px] flex items-center justify-center rounded-sm text-sm ${activeIndex === index
                   ? 'bg-white'

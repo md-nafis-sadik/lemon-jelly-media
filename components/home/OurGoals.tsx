@@ -4,40 +4,34 @@ import TextFadeIn from "../animations/TextFadeIn";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    img: "/images/partners/partner-1.png",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    img: "/images/partners/partner-2.png",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    img: "/images/partners/partner-3.png",
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
+    img: "/images/partners/partner-4.png",
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    img: "/images/partners/partner-5.png",
   },
   {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    img: "/images/partners/partner-6.png",
+  },
+  {
+    img: "/images/partners/partner-7.png",
+  },
+  {
+    img: "/images/partners/partner-8.png",
+  },
+  {
+    img: "/images/partners/partner-9.png",
+  },
+  {
+    img: "/images/partners/partner-10.png",
   },
 ];
 
@@ -45,36 +39,23 @@ const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({
-  img,
-  name,
-  username,
-  body,
+  img
 }: {
   img: string;
-  name: string;
-  username: string;
-  body: string;
 }) => {
   return (
     <figure
       className={cn(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-6 flex justify-center items-center",
         // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        "border-gray-950/[.1] bg-[#F1F3D4] hover:bg-gray-950/[.05]",
         // dark styles
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
       )}
     >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      
+        <img className="h-[52px]"  alt="" src={img} />
+        
     </figure>
   );
 };
@@ -92,19 +73,19 @@ export function MarqueeDemo() {
         </div>
 
       </div>
-      <div className="relative containerX bg-main-50 flex mx-auto flex-col items-center justify-center overflow-hidden">
+      <div className="relative containerX bg-main-50 flex mx-auto flex-col gap-6 items-center justify-center overflow-hidden">
         <Marquee pauseOnHover className="[--duration:20s]">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+          {firstRow.map((review, index) => (
+            <ReviewCard key={index} {...review} />
           ))}
         </Marquee>
         <Marquee reverse pauseOnHover className="[--duration:20s]">
-          {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+          {secondRow.map((review, index) => (
+            <ReviewCard key={index} {...review} />
           ))}
         </Marquee>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-main-50"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-main-50"></div>
       </div>
     </div>
   );

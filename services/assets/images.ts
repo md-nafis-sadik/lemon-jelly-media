@@ -5,7 +5,7 @@ export { default as SmartDataManagement } from "@/public/images/smart-data-manag
 export { default as CheckingApp } from "@/public/images/checking-app.png";
 export { default as Charges } from "@/public/images/charges.png";
 export { default as CardBackground } from "@/public/images/card-background.png";
-export { default as FooterBackground } from "@/public/images/footer-bg.png";
+export { default as FooterBackground } from "@/public/images/footer-background.png";
 export { default as Oimage } from "@/public/images/o-image.png";
 export { default as Logo } from "@/public/images/logo.png";
 export { default as LogoBlack } from "@/public/images/logo-black.png";

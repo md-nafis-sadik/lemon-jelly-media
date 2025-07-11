@@ -24,6 +24,7 @@
     "gsap": "^3.12.5",
     "lenis": "^1.1.14-dev.5",
     "lucide-react": "^0.468.0",
+    "motion": "^12.23.3",
     "next": "15.1.2",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
