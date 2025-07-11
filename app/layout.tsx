@@ -3,16 +3,15 @@ import { bonbon, brittanySignature, interTight, mostculine, poppins, scout, scou
 import "@/styles/globals.css";
 import "@/styles/app.css";
 import Footer from "@/components/footer/Footer";
-import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import Navbar from "@/components/navigation/Navbar";
 import { cn } from "@/lib/utils";
 import LenisWrapper from "@/components/wrapper/LenisWrapper";
 
 export const metadata: Metadata = {
   title: "Lemon Jelly Media",
-  description: "Lemon Jelly Media is your one-stop eSIM solution for seamless global connectivity.",
+  description: "Lemon Jelly is an independent brand-building creative agency. We live on the story side of marketing ",
   icons: {
-    icon: "/favicon.svg", // Path to your favicon in the public directory
+    icon: "/favicon.svg",
   },
 };
 
@@ -41,7 +40,6 @@ const RootLayout = ({
         <LenisWrapper>
           <Navbar />
           {children}
-          {/* <LetsTalk /> */}
           <Footer />
         </LenisWrapper>
       </body>

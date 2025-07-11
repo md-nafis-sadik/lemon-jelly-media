@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
       {
@@ -18,6 +17,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Add these:
+  output: "standalone", // Recommended for Vercel
+  trailingSlash: false, // Match Vercel's default
 };
 
 export default nextConfig;
